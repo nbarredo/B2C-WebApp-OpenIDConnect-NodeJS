@@ -2,11 +2,11 @@
 exports.creds = {
   // Required. It must be tenant-specific endpoint, common endpoint is not supported to use B2C
   // feature.
-  identityMetadata: 'https://login.microsoftonline.com/<tenant_name>.onmicrosoft.com/v2.0/.well-known/openid-configuration', 
+  identityMetadata: 'https://login.microsoftonline.com/laitrampocoa.onmicrosoft.com/v2.0/.well-known/openid-configuration', 
   // or equivalently: 'https://login.microsoftonline.com/<tenant_guid>/v2.0/.well-known/openid-configuration'
 
   // Required, the client ID of your app in AAD  
-  clientID: '<your_client_id>',
+  clientID: '5a5c8eee-eb89-4410-96f2-42c994692cbe',
 
   // Required, must be 'code', 'code id_token', 'id_token code' or 'id_token' 
   // If you want to get access_token, you must be 'code', 'code id_token' or 'id_token code'
@@ -23,7 +23,7 @@ exports.creds = {
   
   // Required if `responseType` is 'code', 'id_token code' or 'code id_token'. 
   // If app key contains '\', replace it with '\\'.
-  clientSecret: '<your_client_secret>', 
+  clientSecret: '&_zd11SBkt7a(zdrmM3bb3^%',
 
   // Required, must be true for B2C
   isB2C: true,
@@ -72,8 +72,8 @@ exports.creds = {
 // replace <tenant_name> with your tenant name, and
 // replace <signin_policy_name> with your signin policy name.
 exports.destroySessionUrl = 
-  'https://login.microsoftonline.com/<tenant_name>.onmicrosoft.com/oauth2/v2.0/logout' +
-  '?p=<signin_policy_name>' +
+  'https://login.microsoftonline.com/laitrampocoa.onmicrosoft.com/oauth2/v2.0/logout' +
+  '?p=B2C_1_Signi' +
   '&post_logout_redirect_uri=http://localhost:3000';
 
 // If you want to use the mongoDB session store for session middleware; otherwise we will use the default
