@@ -1,10 +1,16 @@
-<% if (!user) { %>
-  <h2>Welcome! Please log in.</h2>
-  <a href="/login/?p=B2C_1_Signi">Sign In</a> 
-  <a href="/login/?p=B2C_1_updateprofile">Update Profile</a>
-  <a href="/login/?p=B2C_1_resetpassword">Reset Password</a>
-<% } else { %>
-  <h2>Hello, <%= user.emails[0] %>.</h2>
-  <a href="/account">Account Info</a></br>
-  <a href="/logout">Log Out</a>
-<% } %>
+<link href="/style.css" rel="stylesheet" type="text/css">
+
+<div class="container">
+  <% if (!user) { %>
+    <h2>Welcome! Please log in</h2>
+    <a href="http://localhost:3000/login/?p=B2C_1_Signi">Sign In</a>
+    <!-- <a href="/login/?p=B2C_1_updateprofile">Update Profile</a>
+    <a href="/login/?p=B2C_1_resetpassword">Reset Password</a> -->
+  <% } else { %>
+    <h2>Hello, <%= user.emails[0] %>.</h2>
+    <div style="display: flex; justify-content: space-around;">
+      <a href="http://localhost:3000/account">Account Info</a>
+      <a href="http://localhost:3000/logout">Log Out</a>
+    </div>
+  <% } %>
+</div>

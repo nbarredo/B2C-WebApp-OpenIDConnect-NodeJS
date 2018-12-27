@@ -2,26 +2,26 @@
 exports.creds = {
   // Required. It must be tenant-specific endpoint, common endpoint is not supported to use B2C
   // feature.
-  identityMetadata: 'https://login.microsoftonline.com/laitrampocoa.onmicrosoft.com/v2.0/.well-known/openid-configuration', 
+  identityMetadata: 'https://login.microsoftonline.com/laitrampocoa.onmicrosoft.com/v2.0/.well-known/openid-configuration',
   // or equivalently: 'https://login.microsoftonline.com/<tenant_guid>/v2.0/.well-known/openid-configuration'
 
-  // Required, the client ID of your app in AAD  
+  // Required, the client ID of your app in AAD
   clientID: '5a5c8eee-eb89-4410-96f2-42c994692cbe',
 
-  // Required, must be 'code', 'code id_token', 'id_token code' or 'id_token' 
+  // Required, must be 'code', 'code id_token', 'id_token code' or 'id_token'
   // If you want to get access_token, you must be 'code', 'code id_token' or 'id_token code'
-  responseType: 'code id_token', 
+  responseType: 'code id_token',
 
   // Required
-  responseMode: 'form_post', 
+  responseMode: 'form_post',
 
   // Required, the reply URL registered in AAD for your app
   redirectUrl: 'http://localhost:3000/auth/openid/return', 
 
   // Required if we use http for redirectUrl
   allowHttpForRedirectUrl: true,
-  
-  // Required if `responseType` is 'code', 'id_token code' or 'code id_token'. 
+
+  // Required if `responseType` is 'code', 'id_token code' or 'code id_token'.
   // If app key contains '\', replace it with '\\'.
   clientSecret: '&_zd11SBkt7a(zdrmM3bb3^%',
 
@@ -45,7 +45,7 @@ exports.creds = {
   // Required if `useCookieInsteadOfSession` is set to true. You can provide multiple set of key/iv pairs for key
   // rollover purpose. We always use the first set of key/iv pair to encrypt cookie, but we will try every set of
   // key/iv pair to decrypt cookie. Key can be any string of length 32, and iv can be any string of length 12.
-  cookieEncryptionKeys: [ 
+  cookieEncryptionKeys: [
     { 'key': '12345678901234567890123456789012', 'iv': '123456789012' },
     { 'key': 'abcdefghijklmnopqrstuvwxyzabcdef', 'iv': 'abcdefghijkl' }
   ],
@@ -68,10 +68,10 @@ exports.creds = {
   clockSkew: null,
 };
 
-// The url you need to go to destroy the session with AAD, 
+// The url you need to go to destroy the session with AAD,
 // replace <tenant_name> with your tenant name, and
 // replace <signin_policy_name> with your signin policy name.
-exports.destroySessionUrl = 
+exports.destroySessionUrl =
   'https://login.microsoftonline.com/laitrampocoa.onmicrosoft.com/oauth2/v2.0/logout' +
   '?p=B2C_1_Signi' +
   '&post_logout_redirect_uri=http://localhost:3000';
