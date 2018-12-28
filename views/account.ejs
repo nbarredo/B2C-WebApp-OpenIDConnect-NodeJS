@@ -1,11 +1,21 @@
-<% if (!user) { %>
-	<h2>Welcome! Please log in.</h2>
-	<a href="/login">Log In</a>
-<% } else { %>
-<p>UPN: <%= user._json.upn %></p>
-<p>Profile ID: <%= user.id %></p>
-<p>Full Claimes</p>
-<%- JSON.stringify(user) %>
-<p></p>
-<a href="/logout">Log Out</a>
-<% } %>
+<link href="/style.css" rel="stylesheet" type="text/css">
+
+<div style="display: flex; flex-direction: column;">
+	<% if (!user) { %>
+		<h2>Welcome! Please log in.</h2>
+		<a href="/login">Log In</a>
+	<% } else { %>
+	<p>UPN: <%= user._json.upn %></p>
+	<p>Profile ID: <%= user.id %></p>
+	<p>OID: <%= user.oid %></p>
+	<p>Full Name: <%= user.name.givenName %> <%= user.name.familyName %></p>
+	<p>Full Claimes</p>
+	<%- JSON.stringify(user) %>
+	<p></p>
+	<div style="display: flex; width: 50%; align-self: center;">
+		<a class="link" style="align-self: center;" href="http://localhost:5000/">Back</a>
+		<a class="link" style="align-self: center;" href="http://localhost:3000/logout">Log Out</a>
+	</div>
+	<% } %>
+
+</div>
